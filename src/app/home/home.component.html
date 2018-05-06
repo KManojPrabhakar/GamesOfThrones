@@ -1,0 +1,59 @@
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<p class="books-text text-center">All books, characters and houses</p>
+		</div>
+	</div>
+	<div class="row" *ngIf="allBooks">
+		<div class="col-lg-4 col-md-6  col-xs-12 margin-bottom-20"  *ngFor="let book of allBooks; index as i">
+			<div class="card border border-danger"  >
+				<div class="card-body">
+					<h5 class="card-title">Name: {{book.name}}</h5>
+					<p class="card-text">ISBN: {{book.isbn}}</p>
+					<p class="card-text">by {{book.publisher}}</p>
+					<p class="card-text">{{book.country}}</p>
+					<p class="card-text">Type: {{book.mediaType}}</p>
+					<p class="card-text">{{book.released | date}}</p>
+					<a [routerLink]="['/books',book.url]" class="btn btn-danger">Read</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<div class="row" *ngIf="allCharacters">
+		<div class="col-lg-4 col-md-6  col-xs-12 margin-bottom-20"  *ngFor="let character of allCharacters; index as i ">
+			<div class="card border border-primary"  >
+				<div class="card-body">
+					<h5 class="card-title" *ngIf="character.name">Name: {{character.name}}</h5>
+					<p class="card-text">{{character.gender}}</p>
+					<p class="card-text" *ngIf="character.culture">Culture: {{character.culture}}</p>
+					<p class="card-text" *ngIf="character.titles[0]">Title: {{character.titles[0]}}</p>
+					<p class="card-text" *ngIf="character.aliases[0]" >Alias: {{character.aliases[0]}}</p>
+					<p class="card-text" *ngIf="character.playedBy[0]" >PlayedBy: {{character.playedBy[0]}}</p>
+					<p class="card-text" *ngIf="character.tvSeries[0]" >TvSeries: {{character.tvSeries[0]}}</p>
+					<a [routerLink]="['/character',character.url]" class="btn btn-primary">Read</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<div class="row" *ngIf="allHouses">
+		<div class="col-lg-4 col-md-6  col-xs-12 margin-bottom-20"  *ngFor="let house of allHouses; index as i ">
+			<div class="card border border-success"  >
+				<div class="card-body">
+					<h5 class="card-title">{{house.name}}</h5>
+					<p class="card-text">{{house.region}}</p>
+					<p class="card-text">{{house.coatOfArms}}</p>
+					<p class="card-text" *ngIf="house.words">Words: {{house.words}}</p>
+					<p class="card-text" *ngIf="house.seats[0]">Seats: {{house.seats[0]}}</p>
+					<p class="card-text" *ngIf="house.founded">Founded: {{house.founded}}</p>
+					<a [routerLink]="['/house',house.url]" class="btn btn-success">Read</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+</div>

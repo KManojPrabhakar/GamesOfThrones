@@ -1,0 +1,26 @@
+<div class="container margin-top-20">
+	<div class="row" *ngIf="singleCharacterData">
+		<div class="col-lg-4 col-md-6  col-xs-12 margin-bottom-20">
+			<div class="card border border-primary">
+				<div class="card-body">
+					<h5 class="card-title" *ngIf="singleCharacterData.name">Name: {{singleCharacterData.name}}</h5>
+					<p class="card-text">{{singleCharacterData.gender}}</p>
+					<p class="card-text" *ngIf="singleCharacterData.culture">Culture: {{singleCharacterData.culture}}</p>
+					<p class="card-text" *ngIf="singleCharacterData.titles[0]">Title: {{singleCharacterData.titles[0]}}</p>
+					<p class="card-text" *ngIf="singleCharacterData.aliases[0]" >Alias: {{singleCharacterData.aliases[0]}}</p>
+					<p class="card-text" *ngIf="singleCharacterData.playedBy[0]" >PlayedBy: {{singleCharacterData.playedBy[0]}}</p>
+					<p class="card-text" *ngIf="singleCharacterData.tvSeries[0]" >TvSeries: {{singleCharacterData.tvSeries[0]}}</p>
+				</div>
+				
+
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+
+			<a class="btn btn-warning" *ngIf="singleCharacterData" (click)="goBackToPreviousPage()">Go Back </a>
+		</div>
+	</div>
+</div>

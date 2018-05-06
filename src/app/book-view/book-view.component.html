@@ -1,0 +1,24 @@
+<div class="container margin-top-20">
+	<div class="row" *ngIf="singleBookData">
+		<div class="col-lg-4 col-md-6  col-xs-12 margin-bottom-20">
+			<div class="card border border-danger">
+				<div class="card-body">
+					<h5 class="card-title">Name: {{singleBookData.name}}</h5>
+					<p class="card-text">ISBN: {{singleBookData.isbn}}</p>
+					<p class="card-text">by {{singleBookData.publisher}}</p>
+					<p class="card-text">{{singleBookData.country}}</p>
+					<p class="card-text">Type: {{singleBookData.mediaType}}</p>
+					<p class="card-text">{{singleBookData.released | date}}</p>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+
+			<a class="btn btn-warning" *ngIf="singleBookData" (click)="goBackToPreviousPage()">Go Back </a>
+		</div>
+	</div>
+</div>
