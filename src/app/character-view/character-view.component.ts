@@ -14,7 +14,6 @@ export class CharacterViewComponent implements OnInit {
 
   constructor(private _route:ActivatedRoute,private homeHttpService:HomeHttpService,private location:Location) {
           console.log("Character View Component called");
-
    }
 
   ngOnInit() {
